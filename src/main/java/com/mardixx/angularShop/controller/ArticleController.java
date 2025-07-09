@@ -35,4 +35,14 @@ public class ArticleController {
     public List<Article> getAllArticles() {
         return articleService.findAll();
     }
+
+    @PutMapping("/{id}")
+    public Article updateArticle(@RequestBody Article article, @PathVariable Long id) {
+        Optional<Article> foundArticle = articleService.findById(id);
+        if (foundArticle.isPresent()) {
+            foundArticle = Optional.ofNullable(article);
+            return articleService.save(foundArticle.get());
+        }
+        throw new RuntimeException("Could not find Article with id: " + id);
+    }
 }

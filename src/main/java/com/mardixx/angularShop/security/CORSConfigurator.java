@@ -15,7 +15,7 @@ public class CORSConfigurator {
                 registry
                         .addMapping("/**")
                         .allowedMethods("*")
-                        .allowedOrigins("*", "localhost:4200");
+                        .allowedOrigins("*", "http://localhost:4200");
             }
         };
     }
