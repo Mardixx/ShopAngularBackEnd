@@ -27,7 +27,6 @@ public class Article {
     @Enumerated(EnumType.STRING)
     private TypesEnum typeOfObject;
 
-    @NotBlank
     private Long price;
 
     private long balance;
